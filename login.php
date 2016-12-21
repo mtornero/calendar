@@ -202,7 +202,9 @@ if ( ! empty ( $CUSTOM_HEADER ) && $CUSTOM_HEADER == 'Y' ) {
 }
 ?>
 
-<h2><?php echo $appStr?></h2>
+<table id="login_title" align="center" cellspacing="10" cellpadding="10">
+    <tr><td><?php echo $appStr?></td></tr>
+</table>
 
 <?php
 if ( ! empty ( $error ) ) {

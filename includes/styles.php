@@ -1174,14 +1174,20 @@ echo '  body {
     border:0;
   }
   #login {
-    margin-top:30px;
-    margin-bottom:50px;
+    margin-top:0px;
+    margin-bottom:150px;
   }
   #register table,
   #login table {
-    border:1px solid ' . $GLOBALS['TABLEBG'] . ';
+    margin-top: 10px;
+    -moz-box-shadow: 0 0 5px 5px #999;
+    -webkit-box-shadow: 0 0 5px 5px #999;
+    box-shadow: 0 0 5px 5px #999;
     ' . background_css ( $GLOBALS['CELLBG'], 200 ) . '
     font-size:12px;
+  }
+  #login_title td {
+    font-size: 1.5em;
   }
   .cookies {
     font-size:13px;
