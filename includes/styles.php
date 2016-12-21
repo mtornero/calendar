@@ -1189,14 +1189,14 @@ echo '  body {
   #login_title td {
     font-size: 1.5em;
   }
-  #public_calendar_link {
+  .login_message {
     text-align: center;
   }
-  #public_calendar_link a{
+  .login_message a{
     color: blue;
     font-size:1.4em;
   }
-  #public_calendar_link a:hover{
+  .login_message a:hover{
     color: red;
   }
   .cookies {

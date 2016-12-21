@@ -215,16 +215,16 @@ if ( ! empty ( $error ) ) {
 }
 
 if ( $logout ) {
-  echo '<p>' . translate ( 'You have been logged out.' ) . ".</p>\n";
-  echo "<br /><br />\n";
-  echo '<a href="login.php' .
+  echo '<p class="login_message">' . translate ( 'You have been logged out.' ) . ".</p>\n";
+  echo "<br />\n";
+  /*echo '<a href="login.php' .
     ( ! empty ( $return_path ) ?
       '?return_path=' . htmlentities ( $return_path ) : '' ) .
     '" class="nav">' . translate ( 'Login' ) .
-    "</a><br /><br /><br />\n";
+    "</a><br /><br /><br />\n";*/
 }
 
-if ( ! $logout ) {
+//if ( ! $logout ) {
 ?>
 <form name="login_form" id="login" action="login.php" method="post"
   onsubmit="return valid_form( this )">
@@ -260,10 +260,10 @@ if ( ! empty ( $return_path ) ) {
 </table>
 </form>
 
-<?php }
+<?php //}
 
 if ( ! empty ( $PUBLIC_ACCESS ) && $PUBLIC_ACCESS == 'Y' ) { ?>
-    <br /><br /><p id="public_calendar_link">
+    <br /><br /><p class="login_message">
         <a class="nav" href="index.php">
    <?php etranslate ( 'Access public calendar' )?></a></p><br />
 <?php }
