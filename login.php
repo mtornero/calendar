@@ -263,9 +263,9 @@ if ( ! empty ( $return_path ) ) {
 <?php }
 
 if ( ! empty ( $PUBLIC_ACCESS ) && $PUBLIC_ACCESS == 'Y' ) { ?>
- <br /><br />
- <a class="nav" href="index.php">
-   <?php etranslate ( 'Access public calendar' )?></a><br />
+    <br /><br /><p id="public_calendar_link">
+        <a class="nav" href="index.php">
+   <?php etranslate ( 'Access public calendar' )?></a></p><br />
 <?php }
 
   $nulist = get_nonuser_cals ();

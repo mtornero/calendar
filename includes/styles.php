@@ -1189,6 +1189,16 @@ echo '  body {
   #login_title td {
     font-size: 1.5em;
   }
+  #public_calendar_link {
+    text-align: center;
+  }
+  #public_calendar_link a{
+    color: blue;
+    font-size:1.4em;
+  }
+  #public_calendar_link a:hover{
+    color: red;
+  }
   .cookies {
     font-size:13px;
   }
