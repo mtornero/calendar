@@ -1180,9 +1180,9 @@ echo '  body {
   #register table,
   #login table {
     margin-top: 10px;
-    -moz-box-shadow: 0 0 5px 5px #999;
-    -webkit-box-shadow: 0 0 5px 5px #999;
-    box-shadow: 0 0 5px 5px #999;
+    -moz-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.3);;
+    -webkit-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.3);;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.3);;
     ' . background_css ( $GLOBALS['CELLBG'], 200 ) . '
     font-size:12px;
   }
