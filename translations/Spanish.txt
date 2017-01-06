@@ -858,7 +858,9 @@ Sat: Sab
 #
 My Calendar: Mi Calendario
 Add New Entry: Agregar nueva entrada
+Add New Task: Agregar nueva tarea
 Logout: Salir
+Home: Inicio
 Back to My Calendar: Regresar a Mi Calendario
 Go to: Ir a
 Manage calendar of: Manejar calendario de
