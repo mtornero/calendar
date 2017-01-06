@@ -337,10 +337,36 @@ Weekly: Semanalmente
 Monthly: Mensualmente
 by day: por día
 by date: por fecha
+by position: por posición
+Monthly (by day): Mensual (por día)
+Monthly (by date): Mensual (por fecha)
+Monthly (by position): Mensual (por posición)
 Yearly: Anualmente
+Manual: Manual
+Expert Mode: Modo experto
+Ending: Fin
+Forever: Para siempre 
+Use end date: Usar fecha final
+Number of times: Número de veces
+Weekdays Only: Sólo días de la semana
+Week Start: Comienzo de semana
 repeat-end-date-help: Especifica hasta que día debe repetirse un evento.
 Use end date: Usar fecha
 repeat-frequency-help: Especifica con qué frecuencia un evento debe repetirse. Por defecto 1 indica que debe ocurrir cada vez. Especificando 2 hará que el evento ocurrá cada semana (si <i>Repetir tipo</i> está ajustado a <i>Semanal</i>), cada mes (si <i>Repetir tipo</i> está ajustado a <i>Mensual</i>), etc.
+Exclusions: Exclusiones
+Inclusions: Inclusiones
+Add Exception: Añadir exclusión
+Add Inclusion: Añadir inclusión
+Delete Selected: Eliminar seleccinado
+When: Cuando
+Use Date/Time: Usar Fecha/Hora
+Use Offset: Usar Offset
+Before: Antes
+After: Después
+Start: Comienzo
+End/Due: Final
+Times: Veces 
+Every: Cada 
 Frequency: Frecuencia
 All: Todos
 Send Reminder: Enviar recordatorio
@@ -624,6 +650,9 @@ cookies-note: <b>Nota:</b> Esta aplicación requiere tener habilitado cookies.
 # Page: login.php
 #
 Invalid login: Usuario/contraseña incorrectos
+You have been logged out.: La sesión ha sido cerrada.
+Not yet registered? Register here!: ¿Todavía sin registrar aún? Hazlo aquí.
+
 
 ########################################
 # Page: nonusers.php
@@ -632,7 +661,7 @@ Add New NonUser Calendar: Añadir nuevo calendario de NoUsuario
 
 ########################################
 # Page: pref.php
-#
+# se
 Save Preferences: Guardar preferencias
 hour: hora
 minute: minuto
@@ -731,6 +760,8 @@ You must specify a view name: Debes especificar un nombre de vista
 ########################################
 # Page: view_entry.php
 #
+Location: Localización
+Reminders: Recordatorios
 Assistant mode: Modo ayudante
 External User: Usuario externo
 Approve/Confirm entry: Aprobar/Confirmar registro
@@ -880,6 +911,14 @@ no such user: no existe el usuario
 ########################################
 # Page: includes/xcal.php
 #
+MO: LU
+TU: MA
+WE: MI
+TH: JU
+FR: VI
+SA: SA
+SU: DO
+
 Unnamed Event: Evento sin nombre
 Event Imported: Evento importado
 
@@ -932,7 +971,20 @@ Invalid color: Color no válido
 ########################################
 # Page: includes/menu/index.php
 #
+This Week: Esta Semana
+This Month: Este Mes
+This Year: Este año
+Exit: Salir
+Add New Event: Añadir Nuevo Evento
+Delete Entries: Eliminar entradas
+My Views: Mis vistas
+Manage Calendar of: Gestionar Calendario de
+My Reports: Mis Informes
+My Profile: Mi Perfil
+Public Calendar: Calendario Público
 Unapproved Events: Eventos no aprobados
+User Manager: Gestión de Usuarios
+Help Contents: Contenidos de Ayuda
 
 ########################################
 # Page: tools/send_reminders.php
