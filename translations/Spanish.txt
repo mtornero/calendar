@@ -650,7 +650,7 @@ cookies-note: <b>Nota:</b> Esta aplicación requiere tener habilitado cookies.
 # Page: login.php
 #
 Invalid login: Usuario/contraseña incorrectos
-You have been logged out.: La sesión ha sido cerrada.
+You have been logged out.: La sesión ha sido cerrada
 Not yet registered? Register here!: ¿Todavía sin registrar aún? Hazlo aquí.
 
 
