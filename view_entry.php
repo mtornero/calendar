@@ -389,15 +389,16 @@ if ( $CATEGORIES_ENABLED == 'Y' ) {
 
 // get reminders
 $reminder = getReminders ( $id, true );
+echo '<div id=container>';
 echo '
     <h2>' . $name . ( $is_nonuser_admin ||
   ( $is_admin && ! empty ( $user ) && $user == '__public__' )
   ? '  ( ' . translate ( 'Admin mode' ) . ' )' : '' )
  . ( $is_assistant ? ' ( ' . translate ( 'Assistant mode' ) . ' )' : '' )
  . '</h2>
-    <table width="100%" summary="">
+    <table id="view_entry" summary="">
       <tr>
-        <td class="aligntop bold" width="10%">' . translate ( 'Description' )
+        <td class="label" width="10%">' . translate ( 'Description' )
  . ':</td>
         <td>';
 
@@ -416,18 +417,18 @@ if ( ! empty ( $ALLOW_HTML_DESCRIPTION ) && $ALLOW_HTML_DESCRIPTION == 'Y' ) {
 echo '</td>
       </tr>' . ( $DISABLE_LOCATION_FIELD != 'Y' && ! empty ( $location ) ? '
       <tr>
-        <td class="aligntop bold">' . translate ( 'Location' ) . ':</td>
+        <td class="label">' . translate ( 'Location' ) . ':</td>
         <td>' . $location . '</td>
       </tr>' : '' ) . ( $DISABLE_URL_FIELD != 'Y' && ! empty ( $url ) ? '
       <tr>
-        <td class="aligntop bold">' . translate ( 'URL' ) . ':</td>
+        <td class="label">' . translate ( 'URL' ) . ':</td>
         <td>' . activate_urls(htmlspecialchars($url)) . '</td>
       </tr>' : '' );
 
 if ( $event_status != 'A' && ! empty ( $event_status ) ) {
   echo '
       <tr>
-        <td class="aligntop bold">' . translate ( 'Status' ) . ':</td>
+        <td class="label">' . translate ( 'Status' ) . ':</td>
         <td>';
 
   if ( $event_status == 'D' )
@@ -445,36 +446,36 @@ if ( $event_status != 'A' && ! empty ( $event_status ) ) {
 
 echo '
       <tr>
-        <td class="aligntop bold">'
+        <td class="label">'
  . ( $eType == 'task' ? translate ( 'Start Date' ) : translate ( 'Date' ) )
  . ':</td>
         <td>' . date_to_str ( $display_date ) . ( $eType == 'task' ? '</td>
       </tr>' . ( $event_time >= 0 ? '
       <tr>
-        <td class="aligntop bold">' . translate ( 'Start Time' ) . ':</td>
+        <td class="label">' . translate ( 'Start Time' ) . ':</td>
         <td>'
      . display_time ( $display_date . sprintf ( "%06d", $event_time ), 2 )
      . '</td>
       </tr>' : '' ) . '
       <tr>
-        <td class="aligntop bold">' . translate ( 'Due Date' ) . ':</td>
+        <td class="label">' . translate ( 'Due Date' ) . ':</td>
         <td>' . date_to_str ( $due_date ) . '</td>
       </tr>
       <tr>
-        <td class="aligntop bold">' . translate ( 'Due Time' ) . ':</td>
+        <td class="label">' . translate ( 'Due Time' ) . ':</td>
         <td>' . display_time ( $due_date . sprintf ( "%06d", $due_time ), 2 )
    . '</td>
       </tr>' . ( ! empty ( $cal_completed ) ? '
       <tr>
-        <td class="aligntop bold">' . translate ( 'Completed' ) . ':</td>
+        <td class="label">' . translate ( 'Completed' ) . ':</td>
         <td>' . date_to_str ( $cal_completed ) : '' ) : '' ) . '</td>
       </tr>' . ( $event_repeats ? '
       <tr>
-        <td class="aligntop bold">' . translate ( 'Repeat Type' ) . ':</td>
+        <td class="label">' . translate ( 'Repeat Type' ) . ':</td>
         <td>' . export_recurrence_ical ( $id, true ) . '</td>
       </tr>' : '' ) . ( $eType != 'task' && $event_time >= 0 ? '
       <tr>
-        <td class="aligntop bold">' . translate ( 'Time' ) . ':</td>
+        <td class="label">' . translate ( 'Time' ) . ':</td>
         <td>' . ( $duration == 1440 && $event_time == 0
     ? translate ( 'All day event' )
     : display_time ( $display_date . sprintf ( "%06d", $event_time ),
@@ -488,7 +489,7 @@ if ( $duration > 0 && $duration != 1440 ) {
   $dur_m = $duration - ( $dur_h * 60 );
   echo '
       <tr>
-        <td class="aligntop bold">' . translate ( 'Duration' ) . ':</td>
+        <td class="label">' . translate ( 'Duration' ) . ':</td>
         <td>' . ( $dur_h > 0 ? $dur_h . ' ' . translate ( 'hour'
        . ( $dur_h == 1 ? '' : 's' ) ) . ' ' : '' )
    . ( $dur_m > 0 ? $dur_m . ' ' . translate ( 'minutes' ) : '' ) . '</td>
@@ -497,11 +498,11 @@ if ( $duration > 0 && $duration != 1440 ) {
 
 echo ( $DISABLE_PRIORITY_FIELD != 'Y' ? '
       <tr>
-        <td class="aligntop bold">' . translate ( 'Priority' ) . ':</td>
+        <td class="label">' . translate ( 'Priority' ) . ':</td>
         <td>' . $cal_priority . '-' . $pri[ceil($cal_priority/3)] .'</td>
       </tr>' : '' ) . ( $DISABLE_ACCESS_FIELD != 'Y' ? '
       <tr>
-        <td class="aligntop bold">' . translate ( 'Access' ) . ':</td>
+        <td class="label">' . translate ( 'Access' ) . ':</td>
         <td>' . ( $cal_access == "P"
     ? translate ( 'Public' )
     : ( $cal_access == 'C'
@@ -509,7 +510,7 @@ echo ( $DISABLE_PRIORITY_FIELD != 'Y' ? '
       : translate ( 'Private' ) ) ) . '</td>
       </tr>' : '' ) . ( $CATEGORIES_ENABLED == 'Y' && ! empty ( $category ) ? '
       <tr>
-        <td class="aligntop bold">' . translate ( 'Category' ) . ':</td>
+        <td class="label">' . translate ( 'Category' ) . ':</td>
         <td>' . $category . '</td>
       </tr>' : '' );
 
@@ -534,7 +535,7 @@ if ( ! empty ( $DISPLAY_CREATED_BYPROXY ) && $DISPLAY_CREATED_BYPROXY == 'Y' ) {
 if ( $single_user == 'N' && ! empty ( $createby_fullname ) ) {
   echo '
       <tr>
-        <td class="aligntop bold">' . translate ( 'Created by' ) . ':</td>
+        <td class="label">' . translate ( 'Created by' ) . ':</td>
         <td>';
   if ( $is_private && ! access_is_enabled () )
     echo '[' . translate ( 'Private' ) . ']</td>
@@ -561,7 +562,7 @@ if ( $single_user == 'N' && ! empty ( $createby_fullname ) ) {
 
 echo '
       <tr>
-        <td class="aligntop bold">' . translate ( 'Updated' ) . ':</td>
+        <td class="label">' . translate ( 'Updated' ) . ':</td>
         <td>'
  . ( ! empty ( $GENERAL_USE_GMT ) && $GENERAL_USE_GMT == 'Y'
   ? date_to_str ( $mod_date ) . ' ' . display_time ( $mod_date . $mod_time, 3 )
@@ -571,7 +572,7 @@ echo '
 // Display the reminder info if found.
  . ( ! empty ( $reminder ) ? '
       <tr>
-        <td class="aligntop bold">' . translate ( 'Send Reminder' ) . ':</td>
+        <td class="label">' . translate ( 'Send Reminder' ) . ':</td>
         <td>' . $reminder . '</td>
       </tr>' : '' );
 
@@ -589,7 +590,7 @@ for ( $i = 0; $i < $site_extracnt; $i++ ) {
   if ( ! empty ( $extras[$extra_name]['cal_name'] )  && ! empty ( $extra_view ) ) {
     echo '
       <tr>
-        <td class="aligntop bold">' . translate ( $site_extras[$i][1] ) . ':</td>
+        <td class="label">' . translate ( $site_extras[$i][1] ) . ':</td>
         <td>';
 
     if ( $extra_type == EXTRA_URL ) {
@@ -630,7 +631,7 @@ if ( $PUBLIC_ACCESS == 'Y' && $login == '__public__' &&
 if ( $single_user == 'N' && $show_participants ) {
   echo '
       <tr>
-        <td class="aligntop bold">' . translate ( 'Participants' ) . ':</td>
+        <td class="label">' . translate ( 'Participants' ) . ':</td>
         <td>';
 
   $num_app = $num_rej = $num_wait = 0;
@@ -786,7 +787,7 @@ if ( $eType == 'task' ) {
       ( $login != '__public__' ) && ! $is_nonuser && $event_status != 'D' ) {
     echo '
       <tr>
-        <td class="aligntop bold">
+        <td class="label">
           <form action="view_entry.php?id=' . $id
      . '" method="post" name="setpercentage">
             <input type="hidden" name="others_complete" value="'
@@ -811,7 +812,7 @@ if ( $eType == 'task' ) {
 if ( Doc::attachmentsEnabled () && $rss_view == false ) {
   echo '
       <tr>
-        <td class="aligntop bold">' . translate ( 'Attachments' ) . ':</td>
+        <td class="label">' . translate ( 'Attachments' ) . ':</td>
         <td>';
 
   $attList = new AttachmentList ( $id );
@@ -839,7 +840,7 @@ if ( Doc::attachmentsEnabled () && $rss_view == false ) {
 if ( Doc::commentsEnabled () ) {
   echo '
       <tr>
-        <td class="aligntop bold">' . translate ( 'Comments' ) . ':</td>
+        <td class="label">' . translate ( 'Comments' ) . ':</td>
         <td>';
 
   $comList = new CommentList ( $id );
@@ -1131,7 +1132,7 @@ if ( access_can_access_function ( ACCESS_EXPORT ) &&
     </form>
 EOT;
 }
-
+echo '</div>';
 echo print_trailer ( empty ( $friendly ) );
 
 ?>

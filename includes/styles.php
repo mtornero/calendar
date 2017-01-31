@@ -1334,6 +1334,27 @@ echo '  body {
    padding:.25em;
    border:1px solid ' . $GLOBALS['TABLEBG'] . ';
    background:' . $CELLBG . ';
-  }' . $end_style;
+  }
+  
+  #container {
+   width:800px;
+   margin:0 auto;
+  }
+  #view_entry {
+   with:100%;
+  }
+  #view_entry td{
+   padding-top:1em;
+   padding-bottom:1em;
+   ' . background_css ( $GLOBALS['BGCOLOR'], 30 ) . '
+  }
+  #view_entry .label{
+   vertical-align:top;
+   font-weight:bold;
+   width: 10%;
+   padding: 1em 3em 1em 0.5em;
+  }
+
+' . $end_style;
 
 ?>
