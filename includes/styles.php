@@ -1346,7 +1346,7 @@ echo '  body {
   #view_entry td{
    padding-top:1em;
    padding-bottom:1em;
-   ' . background_css ( $GLOBALS['BGCOLOR'], 30 ) . '
+   ' . background_css ( $GLOBALS['BGCOLOR'], 50 ) . '
   }
   #view_entry .label{
    vertical-align:top;
