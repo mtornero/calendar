@@ -156,6 +156,12 @@ function print_header ( $includes = '', $HeadX = '', $BodyX = '',
     <link rel="stylesheet" type="text/css" href="includes/menu/themes/'
      . $menu_theme . '/theme.css" />';
   }
+  
+  // Include web fonts
+  $ret .= '<link rel="stylesheet" type="text/css" href="includes/vendor/elegant_font/'
+     . 'style.css" />';
+  $ret .= '<!--[if lte IE 7]><script src="lte-ie7.js"></script><![endif]-->';
+  
   // Add RSS feed for unapproved events if approvals are required
   if ( $GLOBALS['REQUIRE_APPROVALS'] == 'Y' && $login != '__public__' && $is_admin ) {
 

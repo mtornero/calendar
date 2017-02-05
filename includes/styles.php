@@ -1354,7 +1354,23 @@ echo '  body {
    width: 10%;
    padding: 1em 3em 1em 0.5em;
   }
-
+  
+  .action_list {
+   with:100%;
+  }
+  .styled_action {
+   font-size: 12px;
+   display: inline-block;
+   padding: .25em .5em;
+   margin: 20px 10px 0 0;
+  }
+  .styled_action .action {
+   color: blue;
+  }
+  .styled_action .action :hover{
+   color: darkblue;
+  }
+  
 ' . $end_style;
 
 ?>

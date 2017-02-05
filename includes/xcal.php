@@ -3056,14 +3056,21 @@ function fb_export_time ( $date, $duration, $time, $texport ) {
 }
 // Generate export select.
 function generate_export_select ( $jsaction = '', $name = 'exformat' ) {
-  $palmStr = translate ( 'Palm Pilot' );
+  // Palm based formats are deprecated
+//  $palmStr = translate ( 'Palm Pilot' );
+//  return '
+//      <select name="format" id="' . $name . '"'
+//   . ( empty ( $jsaction ) ? '' : 'onchange="' . $jsaction . '();"' ) . '>
+//        <option value="ical">iCalendar</option>
+//        <option value="vcal">vCalendar</option>
+//        <option value="pilot-csv">Pilot-datebook CSV (' . $palmStr . ')</option>
+//        <option value="pilot-text">Install-datebook (' . $palmStr . ')</option>
+//      </select>';
   return '
       <select name="format" id="' . $name . '"'
    . ( empty ( $jsaction ) ? '' : 'onchange="' . $jsaction . '();"' ) . '>
         <option value="ical">iCalendar</option>
         <option value="vcal">vCalendar</option>
-        <option value="pilot-csv">Pilot-datebook CSV (' . $palmStr . ')</option>
-        <option value="pilot-text">Install-datebook (' . $palmStr . ')</option>
       </select>';
 }
 

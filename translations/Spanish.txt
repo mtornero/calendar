@@ -294,6 +294,11 @@ An appointment has been canceled for you by: Una cita/evento suyo ha sido cancel
 ########################################
 # Page: docadd.php
 #
+Add Comment: Añadir Comentario
+Add Attachment: Adjuntar archivo
+Subject: Asunto
+Comment: Comentario
+Upload file: Subir archivo
 Description: Descripción
 
 ########################################
