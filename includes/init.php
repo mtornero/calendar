@@ -496,4 +496,19 @@ function print_menu_dates ( $menu = false ) {
 return $ret;
 }
 
+function print_action_link($title, $url, $iconFont, $confirm = "")
+{
+    $confirm_str = "";
+    if (!empty($confirm)) {
+        $confirm_str = ' onclick="return confirm(\''.$confirm.'\' );" ';
+    }
+    echo '<td class="styled_action">
+                <a class="action_link" title="' . $title
+                 . '" href="'.$url.'" '.$confirm_str.'>
+                    <span aria-hidden="true" class="'.$iconFont.'"></span>
+                    &nbsp;<span class="action_link_label">' . $title . '</span>
+                </a>
+	</td>';
+}
+
 ?>

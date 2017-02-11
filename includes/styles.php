@@ -1359,16 +1359,15 @@ echo '  body {
    with:100%;
   }
   .styled_action {
-   font-size: 12px;
    display: inline-block;
    padding: .25em .5em;
-   margin: 20px 10px 0 0;
+   margin: 10px 5px 0 0;
   }
-  .styled_action .action {
+  .action_link {
    color: blue;
   }
-  .styled_action .action :hover{
-   color: darkblue;
+  .action_link:hover{
+   color: MidnightBlue ;
   }
   
 ' . $end_style;
