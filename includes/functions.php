@@ -983,7 +983,7 @@ function display_month ( $thismonth, $thisyear, $demo = false ) {
   $login, $today, $user, $WEEK_START, $WEEKENDBG;
 
   $ret = '
-    <table class="main" cellspacing="0" cellpadding="0" id="month_main">
+    <table class="main main_month" cellspacing="0" cellpadding="0" id="month_main">
       <tr>' . ( $DISPLAY_WEEKNUMBER == 'Y' ? '
         <th class="empty"></th>' : '' );
 

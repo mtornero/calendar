@@ -202,6 +202,9 @@ echo '  body {
     border-right:1px solid ' . $GLOBALS['TABLEBG'] . ';
     border-bottom:1px solid ' . $GLOBALS['TABLEBG'] . ';
   }
+  .main_month {
+    padding-top:10px;
+  }
   .main th {
     width:14%;
     border-top:1px solid ' . $GLOBALS['TABLEBG'] . ';
@@ -1191,6 +1194,9 @@ echo '  body {
   }
   .login_message {
     text-align: center;
+  }
+  .login_error {
+    color:#FF0000;
   }
   .login_message a{
     color: blue;

@@ -175,7 +175,7 @@ function myOnLoad () {
   <?php
     if ( ! empty ( $login ) ) echo "document.login_form.login.select();";
     if ( ! empty ( $error ) ) {
-      echo "  alert ( \"$error\" );\n";
+      // echo "  alert ( \"$error\" );\n";
     }
   ?>
 }
@@ -208,9 +208,11 @@ if ( ! empty ( $CUSTOM_HEADER ) && $CUSTOM_HEADER == 'Y' ) {
 
 <?php
 if ( ! empty ( $error ) ) {
-  echo '<span style="color:#FF0000; font-weight:bold;">' .
-    translate ( 'Error' ) . ": $error</span><br />\n";
-} else {
+  echo '<p class="login_message login_error">' . translate ( 'Error.' ) . ": ".$error."</p>\n";
+  echo "<br />\n";
+//  echo '<span style="color:#FF0000; font-weight:bold;">' .
+//    translate ( 'Error' ) . ": $error</span><br />\n";
+//} else {
   echo "<br />\n";
 }
 
