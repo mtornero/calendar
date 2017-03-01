@@ -124,7 +124,6 @@ if ( ! empty ( $id ) && empty ( $error ) ) {
           $row = dbi_fetch_row ( $res );
           if ( $row && $row[0] > 0 ) {
             $can_view = true;
-            echo json_encode($my_users);die;
           }
 
           dbi_free_result ( $res );
