@@ -105,9 +105,11 @@ if ( ! empty ( $id ) && empty ( $error ) ) {
       $my_users = get_my_users ();
       $cnt = count ( $my_users );
       if ( is_array ( $my_users ) && $cnt ) {
-        $sql = 'SELECT we.cal_id FROM webcal_entry we, webcal_entry_user weu
-          WHERE we.cal_id = weu.cal_id AND we.cal_id = ?
-          AND weu.cal_login IN ( ';
+//        $sql = 'SELECT we.cal_id FROM webcal_entry we, webcal_entry_user weu
+//          WHERE we.cal_id = weu.cal_id AND we.cal_id = ?
+//          AND weu.cal_login IN ( ';
+        $sql = 'SELECT wb.cal_id FROM webcal_blob wb
+        WHERE wb.cal_blob_id = ? AND wb.cal_login IN ( ';
         $query_params = array ();
       $query_params[] = $id;
       for ( $i = 0; $i < $cnt; $i++ ) {
@@ -120,8 +122,10 @@ if ( ! empty ( $id ) && empty ( $error ) ) {
         $res = dbi_execute ( $sql . ' )', $query_params );
         if ( $res ) {
           $row = dbi_fetch_row ( $res );
-          if ( $row && $row[0] > 0 )
+          if ( $row && $row[0] > 0 ) {
             $can_view = true;
+            echo json_encode($my_users);die;
+          }
 
           dbi_free_result ( $res );
         }
@@ -132,6 +136,7 @@ if ( ! empty ( $id ) && empty ( $error ) ) {
         $can_view = false;
     }
   }
+  
   $hide_details = ( $login == '__public__' &&
     ! empty ( $OVERRIDE_PUBLIC ) && $OVERRIDE_PUBLIC == 'Y' );
 
